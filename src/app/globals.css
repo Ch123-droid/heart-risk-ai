@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body {
+  background: #07070d; color: #e5e7eb; min-height: 100vh;
+  background-image:
+    radial-gradient(900px 500px at 15% -10%, rgba(244,63,94,.16), transparent 60%),
+    radial-gradient(800px 500px at 90% 0%, rgba(139,92,246,.14), transparent 60%),
+    radial-gradient(700px 500px at 50% 110%, rgba(56,189,248,.08), transparent 60%);
+  background-attachment: fixed;
+}
+::selection { background: rgba(244,63,94,.4); }
+.glass { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.glass-strong { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(18px); }
+.grad-text { background: linear-gradient(95deg, #fb7185 0%, #f43f5e 35%, #fb923c 70%, #fbbf24 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-text-cool { background: linear-gradient(95deg, #38bdf8, #a78bfa 60%, #f472b6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn-primary { background: linear-gradient(95deg, #f43f5e, #fb7185 55%, #fb923c); box-shadow: 0 8px 30px -8px rgba(244,63,94,.65); transition: transform .2s, box-shadow .2s; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px -8px rgba(244,63,94,.8); }
+
+.ecg-base { stroke: rgba(244,63,94,.18); }
+.ecg-run { stroke-dasharray: .22 1; animation: ecg 3.2s linear infinite; filter: drop-shadow(0 0 6px rgba(244,63,94,.9)); }
+@keyframes ecg { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -1.22; } }
+
+input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; background: rgba(255,255,255,.1); outline: none; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fb7185; border: 3px solid #fff; box-shadow: 0 0 0 4px rgba(244,63,94,.25), 0 4px 12px rgba(0,0,0,.5); cursor: pointer; }
+input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: #fb7185; border: 3px solid #fff; cursor: pointer; }
+.scroll-thin::-webkit-scrollbar { height: 6px; width: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 99px; }
+.recharts-tooltip-wrapper { outline: none; }
